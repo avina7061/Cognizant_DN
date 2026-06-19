@@ -1,0 +1,59 @@
+# 1. Understanding Asymptotic Notation
+
+## Big O Notation and Algorithm Analysis
+
+Big O notation is a mathematical framework used to describe the upper bound of an algorithm's running time or space requirements in terms of the input size ($n$). It helps developers evaluate how an application scales by analyzing efficiency trends, allowing engineers to identify and eliminate potential performance bottlenecks before code goes live into production.
+
+## Search Operation Scenarios
+
+1. Best-Case Scenario
+   * The execution configuration where the algorithm performs the minimum number of steps.
+   * For search routines, this occurs when the targeted element is the very first item inspected ($O(1)$).
+
+2. Average-Case Scenario
+   * The expected execution performance evaluated over a random distribution of inputs.
+   * For search algorithms, this represents finding the item somewhere around the middle of the collection.
+
+3. Worst-Case Scenario
+   * The maximum bound of execution steps an algorithm can possibly perform.
+   * This happens when the targeted item is at the absolute end of the array or is completely missing from the collection ($O(n)$ for linear structures).
+
+---
+
+# 2. Setup
+
+## Project Configuration
+
+Create the structural class file within your workspace to establish search attributes.
+
+* Filename: `Product.java`
+
+```java
+public class Product {
+    private String productId;
+    private String productName;
+    private String category;
+
+    public Product(String productId, String productName, String category) {
+        this.productId = productId;
+        this.productName = productName;
+        this.category = category;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + productId + " | Name: " + productName + " | Category: " + category;
+    }
+}

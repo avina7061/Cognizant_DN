@@ -1,0 +1,42 @@
+# Part 2: Introduction, Explanations & Analysis
+
+## 1. Understanding Array Representation
+
+### Memory Representation
+An array is allocated as a **contiguous block of memory** where elements of identical data types are positioned sequentially next to each other. When an array is instantiated, the system sets aside a fixed-size slot computed directly by multiplying the data type byte size by the requested capacity.
+
+Because memory is contiguous, calculating the exact memory address of any given index ($i$) runs instantly via a base offset formula:
+
+$$\text{Address} = \text{Base Address} + (i \times \text{Size of Element})$$
+
+### Core Advantages
+* **Instant Random Access:** You can read or overwrite an element at any known position in $O(1)$ constant time using its index.
+* **Cache Friendliness:** Because elements sit side-by-side in real hardware memory blocks, computers can automatically load adjacent array components into the high-speed CPU cache, boosting iteration speeds.
+* **Minimal Overhead:** Arrays store raw data objects without allocating extra memory pointers (unlike linked lists which require forward and backward node reference tracking addresses).
+
+---
+
+## 2. Complexity Analysis
+
+Evaluating the performance constraints of the array implementation methods:
+
+| Operation | Time Complexity | Reason for Complexity |
+| :--- | :--- | :--- |
+| **Add** | $O(1)$ | Inserts directly into the array boundary using the tracked `size` tracking pointer. |
+| **Search** | $O(n)$ | Requires iterating through the elements sequentially from the index start to find an ID match. |
+| **Traverse** | $O(n)$ | Requires sequentially visiting and printing every active cell up to the current system size. |
+| **Delete** | $O(n)$ | Finding the item requires a scan, and removing it requires shifting all subsequent elements down to preserve contiguity. |
+
+---
+
+## 3. Limitations & Strategic Use Cases
+
+### Structural Limitations
+* **Fixed Dimensions:** Array allocations cannot expand dynamically or shrink at runtime. If data volume exceeds capacity, memory overflows; if it stays below capacity, allocated slots sit empty and waste RAM.
+* **Costly Structural Shifts:** Adding or removing elements from arbitrary inner indices forces the application to manually copy and shift neighbors left or right to prevent structural fragmentation gaps.
+
+### Ideal Use Cases
+Arrays remain the optimal collection choice when:
+* The absolute maximum dataset constraint is firmly established ahead of execution time (e.g., fixed month intervals, calendar structures).
+* The primary requirement of your framework centers on rapid random lookups by known index locations rather than insertions and deletions.
+* System memory footprint bounds are low, requiring lean allocations with zero reference pointer overhead.

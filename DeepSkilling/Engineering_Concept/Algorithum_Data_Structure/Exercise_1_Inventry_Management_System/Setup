@@ -1,0 +1,7 @@
+To set up this project, you will typically create a standard Java project structure:
+
+Create a root directory named InventoryManagementSystem.
+
+Inside it, create your source folder (src).
+
+Create a main execution file, InventorySystem.java, alongside your Product class file.

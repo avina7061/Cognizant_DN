@@ -1,0 +1,84 @@
+
+
+## Understanding the Factory Method Pattern
+
+### Why the Factory Method Pattern is Needed
+
+In software development, applications often need to create different types of objects based on requirements. Directly creating objects using the `new` keyword can tightly couple the client code with specific classes, making the system difficult to extend and maintain.
+
+The Factory Method Pattern solves this problem by defining a common interface for object creation while allowing subclasses to decide which specific object to create.
+
+In this exercise, a document management system needs to create different types of documents such as Word, PDF, and Excel documents. The Factory Method Pattern provides a flexible way to create these document objects.
+
+## Purpose of the Document Management System
+
+The system is responsible for:
+
+* Creating different types of documents.
+* Hiding object creation logic from client code.
+* Providing flexibility for adding new document types in the future.
+* Promoting loose coupling between document creation and document usage.
+
+## Key Components of the Factory Method Pattern
+
+### 1. Product Interface
+
+* Defines the common behavior for all document types.
+* Acts as a contract that all concrete document classes must follow.
+
+### 2. Concrete Products
+
+* Implement the product interface.
+* Represent specific document types such as Word, PDF, and Excel documents.
+
+### 3. Creator (Factory)
+
+* Declares the factory method `createDocument()`.
+* Defines the interface for creating document objects.
+
+### 4. Concrete Factories
+
+* Extend the factory class.
+* Implement the factory method to create specific document types.
+
+## Working of the Factory Method Pattern
+
+1. The client creates a factory object.
+2. The client calls the `createDocument()` method.
+3. The factory creates the appropriate document object.
+4. The created object is returned to the client.
+5. The client uses the document without knowing its exact implementation.
+
+## Benefits of Using Factory Method Pattern
+
+### Loose Coupling
+
+* Client code depends on abstractions rather than concrete classes.
+
+### Easy Extensibility
+
+* New document types can be added without modifying existing client code.
+
+### Better Code Organization
+
+* Object creation logic is centralized in factory classes.
+
+### Improved Maintainability
+
+* Changes in object creation affect only factory classes.
+
+## Applications of Factory Method Pattern
+
+* Document Management Systems
+* Database Drivers
+* GUI Frameworks
+* Reporting Systems
+* Payment Processing Systems
+* File Handling Applications
+
+## Expected Outcome
+
+* Different document types can be created using factories.
+* Client code remains independent of concrete document classes.
+* The system becomes flexible and easy to extend.
+* Object creation logic is centralized and reusable.

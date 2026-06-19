@@ -1,0 +1,85 @@
+# Exercise 3: Implementing the Builder Pattern
+
+## Understanding the Builder Pattern
+
+### Why the Builder Pattern is Needed
+
+When creating complex objects with multiple attributes, constructors can become lengthy and difficult to manage. If some attributes are optional, multiple constructor variations may be required, making the code harder to read and maintain.
+
+The Builder Pattern solves this problem by separating the construction of an object from its representation. It allows objects to be created step-by-step and supports different configurations of the same object.
+
+In this exercise, a Computer object contains multiple attributes such as CPU, RAM, Storage, and Graphics Card. The Builder Pattern provides a flexible way to create different Computer configurations.
+
+## Purpose of the Computer Class
+
+The Computer class is responsible for:
+
+* Representing a computer system with various hardware components.
+* Supporting different configurations of computers.
+* Simplifying object creation.
+* Improving code readability and maintainability.
+
+## Key Components of the Builder Pattern
+
+### 1. Product Class
+
+* Represents the complex object being created.
+* Contains all required and optional attributes.
+
+### 2. Builder Class
+
+* Responsible for constructing the object.
+* Provides methods to set individual attributes.
+* Returns the builder object for method chaining.
+
+### 3. Build Method
+
+* Creates and returns the final object.
+* Ensures all specified values are assigned correctly.
+
+### 4. Private Constructor
+
+* Prevents direct object creation.
+* Ensures objects are created only through the Builder.
+
+## Working of the Builder Pattern
+
+1. A Builder object is created.
+2. Required and optional attributes are specified using builder methods.
+3. Each method returns the Builder object.
+4. The `build()` method creates the final object.
+5. The constructed object is returned to the client.
+
+## Benefits of Using Builder Pattern
+
+### Improved Readability
+
+* Object creation becomes clear and easy to understand.
+
+### Flexible Object Creation
+
+* Supports optional parameters without requiring multiple constructors.
+
+### Better Maintainability
+
+* Reduces complexity when adding new attributes.
+
+### Encapsulation of Construction Logic
+
+* Keeps object construction separate from business logic.
+
+## Applications of Builder Pattern
+
+* Computer Configuration Systems
+* Vehicle Manufacturing Systems
+* House Construction Systems
+* Report Generation Systems
+* User Profile Creation
+* Configuration Management Systems
+
+## Expected Outcome
+
+* Different Computer configurations can be created easily.
+* Object construction remains flexible and readable.
+* Complex constructors are avoided.
+* The code becomes easier to maintain and extend.

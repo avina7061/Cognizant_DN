@@ -1,0 +1,48 @@
+# 1. Understanding Sorting Algorithms
+
+## Explanation of Sorting Algorithms
+
+* **Bubble Sort:** A simple, comparison-based algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+* **Insertion Sort:** Builds the final sorted array one item at a time by taking each new element and inserting it into its correct position relative to the already sorted elements.
+* **Quick Sort:** A highly efficient divide-and-conquer algorithm. It selects a 'pivot' element and partitions the array into two sub-arrays: elements less than the pivot and elements greater than the pivot. It then recursively sorts the sub-arrays.
+* **Merge Sort:** A divide-and-conquer algorithm that continuously divides the array in half until each sub-array contains a single element, then merges those sorted sub-arrays back together to produce the final sorted array.
+
+---
+
+# 2. Setup
+
+## Project Configuration
+
+Create the structural class file within your workspace to handle order attributes.
+
+* Filename: `Order.java`
+
+```java
+public class Order {
+    private String orderId;
+    private String customerName;
+    private double totalPrice;
+
+    public Order(String orderId, String customerName, double totalPrice) {
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.totalPrice = totalPrice;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order ID: " + orderId + " | Customer: " + customerName + " | Total: $" + totalPrice;
+    }
+}
