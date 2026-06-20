@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Positioning Utilities</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-light">
+    <div class="container py-5">
+      <h1 class="text-center text-primary mb-5">Positioning Utilities</h1>
+
+      <!-- Exercise 16.2 -->
+
+      <h3 class="mb-4">Exercise 16.2 - Image Badge Overlay</h3>
+
+      <div class="position-relative d-inline-block">
+        <img
+          src="event.jpg"
+          alt="Event Image"
+          class="img-fluid rounded shadow"
+          width="400"
+        />
+
+        <span
+          class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+        >
+          New
+        </span>
+      </div>
+
+      <div class="mt-5">
+        <p>
+          This image contains a badge positioned using Bootstrap positioning
+          utilities.
+        </p>
+      </div>
+    </div>
+
+    <!-- Exercise 16.1 -->
+
+    <footer
+      class="position-fixed bottom-0 start-0 w-100 bg-dark text-white text-center py-3"
+    >
+      © 2026 Local Community Event Portal
+    </footer>
+  </body>
+</html>

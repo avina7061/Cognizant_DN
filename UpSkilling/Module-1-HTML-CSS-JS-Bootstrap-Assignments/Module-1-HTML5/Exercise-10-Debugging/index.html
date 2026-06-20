@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Debugging Demo</title>
+
+    <style>
+      .box {
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Chrome DevTools Debugging Demo</h1>
+    </div>
+
+    <button onclick="calculate()">Click Me</button>
+
+    <script>
+      function calculate() {
+        let a = 10;
+        let b = 20;
+
+        console.log("Value of a:", a);
+        console.log("Value of b:", b);
+
+        let sum = a + b;
+
+        console.log("Sum:", sum);
+
+        alert("Sum = " + sum);
+      }
+    </script>
+  </body>
+</html>

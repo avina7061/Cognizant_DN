@@ -1,0 +1,86 @@
+/* General Styling */
+
+body {
+  font-family: Arial, sans-serif;
+
+  background-color: #f4f8ff;
+
+  padding: 20px;
+}
+
+h1,
+h2 {
+  text-align: center;
+
+  color: #1e3a8a;
+}
+
+/* Event Card Styling */
+
+.eventCard {
+  width: 70%;
+
+  margin: 25px auto;
+
+  padding: 20px;
+
+  border: 3px solid #2563eb;
+
+  background-color: white;
+
+  border-radius: 10px;
+}
+
+/* Form Field Styling */
+
+.form-field {
+  display: block;
+
+  width: 300px;
+
+  margin: 15px auto;
+
+  padding: 10px;
+
+  border: 1px solid gray;
+}
+
+/* Outline Styling */
+
+.form-field:focus {
+  outline: 3px solid red;
+}
+
+/* Visibility Demonstration */
+
+.hidden-box {
+  visibility: hidden;
+
+  background-color: orange;
+
+  padding: 15px;
+
+  margin: 15px;
+}
+
+.none-box {
+  display: none;
+
+  background-color: red;
+
+  padding: 15px;
+
+  margin: 15px;
+}
+
+.visible-box {
+  background-color: green;
+
+  color: white;
+
+  padding: 15px;
+
+  margin: 15px;
+
+  text-align: center;
+}

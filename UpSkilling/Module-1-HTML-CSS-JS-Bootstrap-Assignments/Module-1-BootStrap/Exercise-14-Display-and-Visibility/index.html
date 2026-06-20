@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Display and Visibility</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-light">
+    <div class="container py-5">
+      <h1 class="text-center text-primary mb-5">
+        Display and Visibility Utilities
+      </h1>
+
+      <!-- Exercise 14.1 -->
+
+      <h3 class="mb-3">Exercise 14.1</h3>
+
+      <!-- Hidden on all screens,
+             visible from md onwards -->
+
+      <div class="d-none d-md-block bg-primary text-white p-4 rounded mb-4">
+        Visible on Tablet and Desktop (d-none d-md-block)
+      </div>
+
+      <!-- Hidden until lg,
+             then displayed as flex -->
+
+      <div
+        class="d-none d-lg-flex bg-success text-white p-4 rounded justify-content-between mb-5"
+      >
+        <span>Desktop Item 1</span>
+
+        <span>Desktop Item 2</span>
+
+        <span>Desktop Item 3</span>
+      </div>
+
+      <!-- Exercise 14.2 -->
+
+      <h3 class="mb-3">Exercise 14.2</h3>
+
+      <div class="row">
+        <!-- Sidebar -->
+
+        <div class="col-md-3 d-none d-md-block">
+          <div class="bg-dark text-white p-4 rounded">
+            <h4>Sidebar</h4>
+
+            <ul class="list-unstyled">
+              <li>Dashboard</li>
+
+              <li>Events</li>
+
+              <li>Registrations</li>
+
+              <li>Reports</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-12 col-md-9">
+          <div class="bg-white p-4 rounded shadow">
+            <h4>Main Content</h4>
+
+            <p>
+              This section is always visible. The sidebar appears only on
+              tablets and larger screens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

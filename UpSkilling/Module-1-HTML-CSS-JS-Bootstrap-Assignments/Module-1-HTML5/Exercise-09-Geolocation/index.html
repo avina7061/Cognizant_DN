@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nearby Event Locator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef4ff;
+      }
+
+      .container {
+        width: 600px;
+        margin: 60px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+
+      h1 {
+        color: #1e40af;
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      #result {
+        margin-top: 25px;
+        padding: 15px;
+        background: #f3f4f6;
+        border-radius: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Find Nearby Events</h1>
+
+      <p>Click the button below to find events near your location.</p>
+
+      <button onclick="findNearbyEvents()">Find Nearby Events</button>
+
+      <div id="result">Location information will appear here.</div>
+    </div>
+
+    <script>
+      function findNearbyEvents() {
+        const result = document.getElementById("result");
+
+        if (!navigator.geolocation) {
+          result.innerHTML = "Geolocation is not supported by this browser.";
+
+          return;
+        }
+
+        result.innerHTML = "Fetching location...";
+
+        navigator.geolocation.getCurrentPosition(
+          showPosition,
+          showError,
+
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0,
+          },
+        );
+      }
+
+      function showPosition(position) {
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+
+        document.getElementById("result").innerHTML = `
+                <h3>Location Found</h3>
+                <br>
+                <strong>Latitude:</strong> ${lat}<br><br>
+                <strong>Longitude:</strong> ${lng}<br><br>
+
+                <strong>Suggested Nearby Event:</strong>
+                Community Tech Meetup
+            `;
+      }
+
+      function showError(error) {
+        let message = "";
+
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            message = "Location access denied by user.";
+            break;
+
+          case error.POSITION_UNAVAILABLE:
+            message = "Location information unavailable.";
+            break;
+
+          case error.TIMEOUT:
+            message = "Location request timed out.";
+            break;
+
+          default:
+            message = "Unknown error occurred.";
+        }
+
+        document.getElementById("result").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Registration Form</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef2ff;
+      }
+
+      .container {
+        width: 550px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px;
+      }
+
+      h1 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+
+      output {
+        display: block;
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Event Registration Form</h1>
+
+      <form onsubmit="showConfirmation(event)">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          required
+          autofocus
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          required
+        />
+
+        <label for="date">Event Date</label>
+        <input type="date" id="date" required />
+
+        <label for="eventType">Event Type</label>
+        <select id="eventType" required>
+          <option value="">Select Event</option>
+
+          <option>Tech Meetup</option>
+
+          <option>Workshop</option>
+
+          <option>Hackathon</option>
+        </select>
+
+        <label for="message">Message</label>
+
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Enter your message"
+          required
+        ></textarea>
+
+        <button type="submit">Register</button>
+
+        <output id="confirmationMessage"></output>
+      </form>
+    </div>
+
+    <script>
+      function showConfirmation(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+
+        document.getElementById("confirmationMessage").value =
+          "Registration Successful! Thank you, " + name + ".";
+      }
+    </script>
+  </body>
+</html>

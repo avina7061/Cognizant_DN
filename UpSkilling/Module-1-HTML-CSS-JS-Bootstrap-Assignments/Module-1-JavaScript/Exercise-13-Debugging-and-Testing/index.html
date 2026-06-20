@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>AJAX & Fetch API</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+
+        background-color: #f4f8ff;
+
+        padding: 20px;
+      }
+
+      .container {
+        width: 400px;
+
+        margin: auto;
+
+        background: white;
+
+        padding: 20px;
+
+        border-radius: 10px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+
+        color: #1e3a8a;
+      }
+
+      input,
+      select {
+        width: 100%;
+
+        padding: 10px;
+
+        margin: 10px 0;
+      }
+
+      button {
+        width: 100%;
+
+        padding: 10px;
+
+        cursor: pointer;
+      }
+
+      #message {
+        margin-top: 15px;
+
+        text-align: center;
+
+        font-weight: bold;
+      }
+
+      .success {
+        color: green;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .loading {
+        color: #2563eb;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Event Registration</h1>
+
+      <form id="registrationForm">
+        <input type="text" id="name" placeholder="Enter Name" required />
+
+        <input type="email" id="email" placeholder="Enter Email" required />
+
+        <select id="event">
+          <option value="Tech Meetup">Tech Meetup</option>
+
+          <option value="Music Night">Music Night</option>
+
+          <option value="Community Cleanup">Community Cleanup</option>
+        </select>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <div id="message"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+/* Body Background= */
+
+body {
+  /* Fallback Color */
+
+  background-color: #dbeafe;
+
+  /* Background Image */
+
+  background-image: url("background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Header= */
+
+h1 {
+  color: #ffffff; /* HEX Color */
+
+  text-align: center;
+  padding: 25px;
+}
+
+/* Gradient Headers= */
+
+.section-header {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 15px;
+}
+
+/* Event Sections= */
+
+.event-section {
+  width: 80%;
+
+  margin: 30px auto;
+
+  padding: 20px;
+
+  background-color: rgba(255, 255, 255, 0.85);
+
+  border-radius: 10px;
+}
+
+/* Paragraph Styling */
+
+p {
+  color: #1f2937;
+
+  text-align: center;
+
+  font-size: 18px;
+}

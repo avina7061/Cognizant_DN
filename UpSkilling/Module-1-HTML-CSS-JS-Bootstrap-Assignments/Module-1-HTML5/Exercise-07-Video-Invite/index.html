@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Promo Video</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2ff;
+      }
+
+      .container {
+        width: 700px;
+        margin: 40px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        color: #1e3a8a;
+      }
+
+      video {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+      }
+
+      #status {
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Community Event Promo</h1>
+
+      <p>Watch our upcoming event invitation video.</p>
+
+      <video controls oncanplay="videoReady()">
+        <source src="promo.mp4" type="video/mp4" />
+
+        Your browser does not support video playback.
+      </video>
+
+      <p id="status"></p>
+    </div>
+
+    <script>
+      function videoReady() {
+        document.getElementById("status").innerHTML = "✅ Video ready to play";
+      }
+
+      window.onbeforeunload = function () {
+        return "Are you sure you want to leave this page?";
+      };
+    </script>
+  </body>
+</html>

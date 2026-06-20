@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Event Registration Form</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+
+        background-color: #f4f8ff;
+
+        padding: 20px;
+      }
+
+      .container {
+        width: 400px;
+
+        margin: auto;
+
+        background: white;
+
+        padding: 20px;
+
+        border-radius: 10px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+
+        color: #1e3a8a;
+      }
+
+      input,
+      select {
+        width: 100%;
+
+        padding: 10px;
+
+        margin: 8px 0;
+      }
+
+      button {
+        width: 100%;
+
+        padding: 10px;
+
+        cursor: pointer;
+      }
+
+      .error {
+        color: red;
+
+        font-size: 14px;
+
+        margin-bottom: 10px;
+      }
+
+      .success {
+        color: green;
+
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Event Registration</h1>
+
+      <form id="registrationForm">
+        <input type="text" name="name" placeholder="Enter Name" />
+
+        <div id="nameError" class="error"></div>
+
+        <input type="email" name="email" placeholder="Enter Email" />
+
+        <div id="emailError" class="error"></div>
+
+        <select name="event">
+          <option value="">Select Event</option>
+
+          <option value="Tech Meetup">Tech Meetup</option>
+
+          <option value="Music Night">Music Night</option>
+
+          <option value="Community Cleanup">Community Cleanup</option>
+        </select>
+
+        <div id="eventError" class="error"></div>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <div id="successMessage"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

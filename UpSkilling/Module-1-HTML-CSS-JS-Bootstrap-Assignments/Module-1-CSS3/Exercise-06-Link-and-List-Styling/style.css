@@ -1,0 +1,93 @@
+/* General Styling */
+
+body {
+  font-family: Arial, sans-serif;
+
+  background-color: #f4f8ff;
+
+  margin: 0;
+
+  padding: 20px;
+}
+
+/* Heading */
+
+h1 {
+  text-align: center;
+
+  color: #1e3a8a;
+}
+
+/* Navigation Menu */
+
+.nav-menu {
+  list-style-type: none;
+
+  padding: 0;
+
+  margin: 20px 0;
+
+  text-align: center;
+}
+
+.nav-menu li {
+  display: inline-block;
+
+  margin: 0 15px;
+
+  padding: 10px;
+}
+
+/* Link Styling */
+
+a:link {
+  color: #2563eb;
+
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7c3aed;
+}
+
+a:hover {
+  color: #dc2626;
+
+  text-decoration: underline;
+}
+
+a:active {
+  color: #16a34a;
+}
+
+/* Event List */
+
+.event-list {
+  list-style-type: square;
+
+  list-style-position: inside;
+
+  width: 400px;
+
+  margin: 30px auto;
+
+  padding: 20px;
+
+  background-color: white;
+
+  border-radius: 10px;
+}
+
+.event-list li {
+  margin: 12px 0;
+
+  padding: 8px;
+}
+
+/* Section Heading */
+
+h2 {
+  text-align: center;
+
+  color: #2563eb;
+}

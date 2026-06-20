@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Feedback Portal</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      img {
+        width: 250px;
+        border: 2px solid black;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #feeDisplay {
+        font-weight: bold;
+        color: blue;
+      }
+
+      textarea {
+        width: 350px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Community Event Feedback Form</h1>
+
+    <hr />
+
+    <label>Phone Number:</label>
+    <input type="text" id="phone" onblur="validatePhone()" />
+
+    <p id="phoneMessage"></p>
+
+    <hr />
+
+    <label>Select Event:</label>
+
+    <select id="eventSelect" onchange="showFee()">
+      <option value="">Choose Event</option>
+
+      <option value="100">Tech Meetup</option>
+
+      <option value="200">Workshop</option>
+
+      <option value="300">Hackathon</option>
+    </select>
+
+    <p id="feeDisplay"></p>
+
+    <hr />
+
+    <button onclick="submitFeedback()">Submit Feedback</button>
+
+    <hr />
+
+    <h3>Double Click Image to Enlarge</h3>
+
+    <img
+      id="eventImage"
+      src="event.jpg"
+      alt="Event Image"
+      ondblclick="enlargeImage()"
+    />
+
+    <hr />
+
+    <label>Feedback:</label>
+
+    <br /><br />
+
+    <textarea
+      id="feedback"
+      onkeyup="countCharacters()"
+      placeholder="Enter your feedback..."
+    ></textarea>
+
+    <p>
+      Characters Typed:
+      <span id="charCount">0</span>
+    </p>
+
+    <script>
+      function validatePhone() {
+        let phone = document.getElementById("phone").value;
+
+        let msg = document.getElementById("phoneMessage");
+
+        if (phone.length !== 10) {
+          msg.innerHTML = "Phone number must contain 10 digits";
+          msg.style.color = "red";
+        } else {
+          msg.innerHTML = "Valid Phone Number";
+          msg.style.color = "green";
+        }
+      }
+
+      function showFee() {
+        let fee = document.getElementById("eventSelect").value;
+
+        document.getElementById("feeDisplay").innerHTML = "Event Fee: ₹" + fee;
+      }
+
+      function submitFeedback() {
+        alert("Feedback submitted successfully!");
+      }
+
+      function enlargeImage() {
+        let img = document.getElementById("eventImage");
+
+        img.style.width = "450px";
+      }
+
+      function countCharacters() {
+        let text = document.getElementById("feedback").value;
+
+        document.getElementById("charCount").innerHTML = text.length;
+      }
+    </script>
+  </body>
+</html>
