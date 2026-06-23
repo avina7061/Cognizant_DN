@@ -48,23 +48,11 @@ INTO v_balance
 FROM Accounts
 WHERE AccountID = p_from_account;
 
-```
 IF v_balance >= p_amount THEN
+UPDATE Accounts
+SET Balance = Balance - p_amount
+WHERE AccountID = p_from_account;
 
-    UPDATE Accounts
-    SET Balance = Balance - p_amount
-    WHERE AccountID = p_from_account;
-
-    UPDATE Accounts
-    SET Balance = Balance + p_amount
-    WHERE AccountID = p_to_account;
-
-    COMMIT;
-
-ELSE
-    DBMS_OUTPUT.PUT_LINE('Insufficient Balance');
-END IF;
-```
 
 END;
 /
