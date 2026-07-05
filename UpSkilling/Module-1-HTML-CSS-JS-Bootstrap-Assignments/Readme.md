@@ -135,7 +135,7 @@ Through these exercises, the following skills were practiced:
 
 ## Author
 
-Amish Jain
+Avinash Choudhary
 
 B.Tech (Computer Science)
 
