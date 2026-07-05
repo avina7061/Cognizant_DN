@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Exercise_5_Configuring the Spring IoC Container" />
+        <module name="orm-learn" />
+        <module name="jwt-spring-learn" />
+        <module name="SpringREST_Handson_1" />
+        <module name="LibraryManagement" />
+        <module name="Exercise_3_Implementing Logging with Spring AOP" />
+        <module name="LibraryManagement8" />
+        <module name="LibraryManagement6" />
+        <module name="LibraryManagement (2)" />
+        <module name="LibraryManagement (3)" />
+        <module name="LibraryManagement6 (1)" />
+        <module name="EmployeeManagementSystem" />
+        <module name="LibraryManagement (1)" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EmployeeManagementSystem" options="-parameters" />
+      <module name="LibraryManagement (1)" options="-parameters" />
+      <module name="SpringREST_Handson_1" options="-parameters" />
+      <module name="jwt-spring-learn" options="-parameters" />
+      <module name="orm-learn" options="-parameters" />
+    </option>
+  </component>
+</project>

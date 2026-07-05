@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_2_Implementing Dependency Injection/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_6_Configuring Beans with Annotations/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_8_Implementing Basic AOP with Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_9_Creating a Spring Boot Application/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_3_Implementing Logging with Spring AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_5_Configuring the Spring IoC Container/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_1_Configuring a Basic Spring Application/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_4_Creating and Configuring a Maven Project/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/SpringCore &amp; Maven/Exercise_7_Implementing Constructor and Setter Injection/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/Spring Data JPA with Hybernate/ORM_Tool/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_2/Spring Data JPA with Hybernate/EmployeeManagementSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_3/jwt-spring-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/DeepSkilling/Week_3/SpringREST_Handson_1/SpringREST_Handson_1/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
