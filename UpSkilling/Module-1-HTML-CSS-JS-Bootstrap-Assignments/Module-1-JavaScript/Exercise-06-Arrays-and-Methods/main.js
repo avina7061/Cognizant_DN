@@ -2,12 +2,12 @@
 
 const events = [
   {
-    name: "Music Night",
+    name: "Music Festival",
     category: "Music",
   },
 
   {
-    name: "Baking",
+    name: "Art Exhibition",
     category: "Workshop",
   },
 
@@ -20,7 +20,7 @@ const events = [
 // Add New Events Using push()
 
 events.push({
-  name: "Classical Concert",
+  name: "Jazz Night",
   category: "Music",
 });
 
