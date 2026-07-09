@@ -8,7 +8,7 @@ class Animal {
 class Dog extends Animal {
 
     void makeSound() {
-        System.out.println("Bark");
+        System.out.println("Dog Bark");
     }
 }
 
@@ -16,9 +16,9 @@ public class ImplementInheritance {
     public static void main(String[] args) {
 
         Animal animal = new Animal();
-        Dog dog = new Dog();
+        Dog d = new Dog();
 
         animal.makeSound();
-        dog.makeSound();
+        d.makeSound();
     }
 }
