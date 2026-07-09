@@ -4,6 +4,7 @@ This repository contains solutions for the Frontend Development exercises comple
 
 ## Modules Covered
 
+
 ### Module 1: HTML5
 
 Topics Covered:
@@ -135,7 +136,7 @@ Through these exercises, the following skills were practiced:
 
 ## Author
 
-Amish Jain
+Avinash Choudhary
 
 B.Tech (Computer Science)
 
