@@ -103,7 +103,7 @@ Through this module, the following concepts were practiced:
 
 ## Author
 
-**Amish Jain**
+**Avinash Choudhary**
 
 B.Tech (Computer Science)
 
