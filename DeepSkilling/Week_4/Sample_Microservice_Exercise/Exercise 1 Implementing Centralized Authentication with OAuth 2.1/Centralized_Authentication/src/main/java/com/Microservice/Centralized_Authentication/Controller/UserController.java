@@ -1,4 +1,4 @@
-package main.java.com.Microservice.Centralized_Authentication.Controller;
+package com.Microservice.Centralized_Authentication.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
