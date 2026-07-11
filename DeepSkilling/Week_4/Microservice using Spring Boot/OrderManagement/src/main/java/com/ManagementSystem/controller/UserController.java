@@ -27,6 +27,6 @@ public class UserController {
     @GetMapping("/{id}")
     public UserResponseDto getUserWithOrders(@PathVariable Long id) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-        return new UserResponseDto(user, orderClient.getOrdersByUserId(id));
+        return new UserResponseDto();
     }
 }
