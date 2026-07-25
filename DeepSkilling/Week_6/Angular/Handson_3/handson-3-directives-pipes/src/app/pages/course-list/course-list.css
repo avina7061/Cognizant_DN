@@ -1,0 +1,6 @@
+.course-list-container { padding: 2rem; font-family: sans-serif; }
+.loading-spinner { font-size: 1.2rem; font-weight: bold; color: #2563eb; }
+.card-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; margin-bottom: 1.5rem; }
+.empty-state { padding: 2rem; background: #f1f5f9; border: 2px dashed #94a3b8; border-radius: 8px; text-align: center; color: #475569; }
+.selection-summary { padding: 0.75rem 1rem; background: #e2e8f0; border-radius: 6px; display: inline-block; margin-top: 1rem; }
+.btn-clear { background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-bottom: 1rem; }

@@ -1,0 +1,24 @@
+{{ course.name | uppercase }}
+  Code: {{ course.code }}
+  
+  
+  Credits: {{ course.credits | creditLabel }}
+
+  
+  
+    Passed
+    Failed
+    Pending
+  
+
+  
+  
+    {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+  
+
+  
+    Additional course syllabus and schedule information rendered here.
+  
+
+  
+    {{ course.isEnrolled ? 'Enrolled' : 'Enroll' }}
