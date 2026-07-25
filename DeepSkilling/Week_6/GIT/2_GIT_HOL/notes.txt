@@ -1,0 +1,118 @@
+==============================================================================
+                  GIT IGNORE HANDS-ON LAB NOTES
+==============================================================================
+
+[TABLE OF CONTENTS]
+1. Concept of .gitignore
+2. Key Pattern Rules in .gitignore
+3. Step-by-Step Hands-On Implementation
+4. Verification & Testing
+5. Quick Reference Commands
+
+------------------------------------------------------------------------------
+1. CONCEPT OF .GITIGNORE
+------------------------------------------------------------------------------
+What is .gitignore?
+• A text file named `.gitignore` placed in the root of a Git repository.
+• Tells Git which untracked files and folders to intentionally ignore.
+
+Why use .gitignore?
+• Prevents sensitive information (passwords, API keys, .env files) from 
+  being committed.
+• Excludes auto-generated build files, logs, temporary files, and 
+  dependencies (e.g., node_modules, .log files, target/ folders).
+• Keeps remote repositories clean and reduces unnecessary file storage.
+
+Important Rule:
+• Files that are ALREADY tracked by Git will NOT be affected by .gitignore.
+• .gitignore only works on UNTRACKED files.
+
+------------------------------------------------------------------------------
+2. KEY PATTERN RULES IN .GITIGNORE
+------------------------------------------------------------------------------
+• Specific File:       filename.ext      (e.g., app.log)
+• Wildcard Extension:  *.ext             (e.g., *.log ignores all .log files)
+• Specific Directory:  folder_name/      (e.g., log/ ignores log directory)
+• Comments:            # Comment line    (Lines starting with # are ignored)
+• Negation:            !important.log    (Do not ignore this specific file)
+
+------------------------------------------------------------------------------
+3. STEP-BY-STEP HANDS-ON IMPLEMENTATION
+------------------------------------------------------------------------------
+Lab Goal: Create .log files and a log folder, then configure .gitignore to 
+          exclude them from commit.
+
+Step 1: Open Terminal & Navigate to Project Directory
+Commands:
+  cd GitDemo
+  git status
+Explanation: Ensures you are inside your working Git repository.
+
+Step 2: Create Dummy Files and Folders
+Commands:
+  echo "This is a log file" > error.log
+  mkdir log
+  echo "Internal system trace" > log/app.log
+  echo "Regular text file" > summary.txt
+Explanation: 
+  - 'error.log' is a root log file.
+  - 'log/' is a directory containing 'app.log'.
+  - 'summary.txt' is a valid file that SHOULD be tracked.
+
+Step 3: Verify Status Before .gitignore
+Command:
+  git status
+Expected Output:
+  Displays 'error.log', 'log/', and 'summary.txt' under Untracked files (red).
+
+Step 4: Create and Configure .gitignore
+Commands:
+  notepad++ .gitignore
+Explanation:
+  Opens Notepad++. Add the following lines inside .gitignore, then save & exit:
+
+  # Ignore all files ending with .log extension
+  *.log
+
+  # Ignore the entire log folder and its contents
+  log/
+
+Step 5: Verify Status After .gitignore
+Command:
+  git status
+Expected Output:
+  Git will now ONLY show:
+    - .gitignore (untracked)
+    - summary.txt (untracked)
+  Notice that 'error.log' and 'log/' folder NO LONGER appear in git status!
+
+------------------------------------------------------------------------------
+4. VERIFICATION & COMMIT PROCESS
+------------------------------------------------------------------------------
+Step 1: Stage the Valid Files and .gitignore
+Command:
+  git add .gitignore summary.txt
+Explanation: Moves .gitignore and summary.txt to the staging area.
+
+Step 2: Commit Changes via Notepad++
+Command:
+  git commit
+Explanation: Opens Notepad++. Write the commit message:
+  "Configure .gitignore to exclude log files and folders"
+  Save (Ctrl+S) and close the editor.
+
+Step 3: Verify Working Directory Status
+Command:
+  git status
+Expected Output:
+  "nothing to commit, working tree clean"
+  (Neither error.log nor the log/ folder were included in the commit!)
+
+Step 4: Push to Remote Repository (GitLab/GitHub)
+Command:
+  git push origin main
+Explanation: Syncs local commits to the remote origin repository.
+
+==============================================================================
+                            END OF HANDS-ON LAB NOTES
+==============================================================================

@@ -1,0 +1,114 @@
+==============================================================================
+                    GIT & NOTEPAD++ HANDS-ON LAB NOTES
+==============================================================================
+
+[TABLE OF CONTENTS]
+1. Environment Setup & Configuration
+2. Notepad++ Integration as Core Editor
+3. Working Directory & Local Repository Operations
+4. Linking & Pushing to Remote Repository (GitLab/GitHub)
+5. Quick Reference Command Summary
+
+------------------------------------------------------------------------------
+1. ENVIRONMENT SETUP & CONFIGURATION
+------------------------------------------------------------------------------
+Goal: Verify Git installation and configure globally identity settings.
+
+• Check Git Version:
+  Command: git --version
+  Explanation: Confirms that Git Bash client is installed correctly on the machine.
+
+• Set Global Identity:
+  Command: git config --global user.name "Your Name"
+  Command: git config --global user.email "your.email@example.com"
+  Explanation: Attaches identity details to every commit created on this machine.
+
+• Verify Global Config:
+  Command: git config --global --list
+  Explanation: Displays all active global configurations saved in ~/.gitconfig.
+
+------------------------------------------------------------------------------
+2. NOTEPAD++ INTEGRATION AS CORE EDITOR
+------------------------------------------------------------------------------
+Goal: Configure Notepad++ as the default text editor for Git commands.
+
+• System Environment Path (Windows):
+  Path: C:\Program Files\Notepad++
+  Explanation: Adding this path to Environment Variables allows Git Bash to 
+               recognize 'notepad++' as a executable command from anywhere.
+
+• Test Execution:
+  Command: notepad++
+  Explanation: Opens Notepad++ directly from the Git Bash command prompt.
+
+• Configure Git Core Editor:
+  Command: git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+  Explanation: Tells Git to launch Notepad++ whenever a multi-line text editor 
+               is needed (e.g., writing commit messages).
+
+• Verify Editor Configuration:
+  Command: git config --global -e
+  Explanation: Opens the global .gitconfig file directly in Notepad++ for verification.
+
+------------------------------------------------------------------------------
+3. WORKING DIRECTORY & LOCAL REPOSITORY OPERATIONS
+------------------------------------------------------------------------------
+Goal: Initialize a repository, track files, and create a local commit.
+
+• Step 1: Create & Initialize Directory
+  Commands:
+    mkdir GitDemo
+    cd GitDemo
+    git init
+  Explanation: 'mkdir' creates the folder, 'cd' enters it, and 'git init' 
+               initializes a hidden .git directory to turn the folder into a Git repo.
+
+• Step 2: Check Directory Structure
+  Command: ls -la
+  Explanation: Lists all files, including hidden files like .git (which holds 
+               all version history and metadata).
+
+• Step 3: File Creation & Content Verification
+  Commands:
+    echo "Welcome to Git Hands-On Lab" > welcome.txt
+    cat welcome.txt
+  Explanation: 'echo >' creates welcome.txt and writes text into it. 'cat' prints 
+               file contents in terminal.
+
+• Step 4: Check Tracking Status
+  Command: git status
+  Explanation: Shows untracked files in the working directory (displayed in red).
+
+• Step 5: Staging (Index) Area
+  Command: git add welcome.txt
+  Explanation: Moves welcome.txt from Working Directory to Staging Area (ready to commit).
+
+• Step 6: Commit via Configured Editor
+  Command: git commit
+  Explanation: Launches Notepad++. Write a multi-line commit message, save 
+               (Ctrl+S), and close the editor window to finalize the commit.
+
+------------------------------------------------------------------------------
+7. LINKING & PUSHING TO REMOTE REPOSITORY (GitLab / GitHub)
+------------------------------------------------------------------------------
+Goal: Connect local repository to a remote cloud repository and push code.
+
+• Step 1: Add Remote Origin
+  Command: git remote add origin https://gitlab.com/your-username/GitDemo.git
+  Explanation: Binds local repository to remote URL under alias name 'origin'.
+
+• Step 2: Set Main Branch & Sync Remote
+  Commands:
+    git branch -M main
+    git pull origin main --allow-unrelated-histories
+  Explanation: Renames branch to 'main' and fetches/merges any existing files on 
+               the remote repository before pushing.
+
+• Step 3: Push Local Commits
+  Command: git push -u origin main
+  Explanation: Uploads local 'main' branch commits to remote 'origin'. The '-u' flag 
+               sets default upstream tracking.
+
+==============================================================================
+                            END OF HANDS-ON LAB NOTES
+==============================================================================

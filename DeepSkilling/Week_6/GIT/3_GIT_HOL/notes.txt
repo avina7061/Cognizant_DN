@@ -1,0 +1,119 @@
+==============================================================================
+               GIT BRANCHING & MERGING HANDS-ON LAB NOTES
+==============================================================================
+
+[TABLE OF CONTENTS]
+1. Core Concepts: Branching & Merging
+2. GitLab Remote Workflow (Branch & Merge Requests)
+3. Step-by-Step Hands-On Implementation (Git Bash & P4Merge)
+4. Verification & Clean-Up
+5. Quick Reference Command Summary
+
+------------------------------------------------------------------------------
+1. CORE CONCEPTS: BRANCHING & MERGING
+------------------------------------------------------------------------------
+What is Branching?
+• A branch represents an independent line of development.
+• Allows developers to isolate new features, bug fixes, or experiments 
+  without affecting the main codebase ('main' or 'master').
+
+What is Merging?
+• The process of combining changes from one branch (e.g., feature branch) 
+  into another branch (e.g., master/main).
+• Types of Merges:
+  - Fast-Forward: Moves the target branch pointer directly to the latest commit.
+  - 3-Way Merge: Combines two distinct branch histories using a common commit base.
+
+------------------------------------------------------------------------------
+2. GITLAB REMOTE WORKFLOW (BRANCH & MERGE REQUESTS)
+------------------------------------------------------------------------------
+• Creating a Branch Request:
+  - In GitLab, developers can create feature branches directly from the web UI
+    or push local branches up using: git push origin <branch-name>
+
+• Creating a Merge Request (MR):
+  - An MR (called a Pull Request in GitHub) notifies team members that 
+    changes in a feature branch are ready to be integrated into 'main'.
+  - Allows peer code review, automated testing (CI/CD), and conflict detection 
+    before merging.
+
+------------------------------------------------------------------------------
+3. STEP-BY-STEP HANDS-ON IMPLEMENTATION
+------------------------------------------------------------------------------
+Lab Goal: Create 'GitNewBranch', make commits, inspect visual diffs using 
+          P4Merge, merge back to master, and delete the branch.
+
+PART 1: BRANCH CREATION & MODIFICATION
+--------------------------------------
+Step 1: Create a New Branch
+Command:
+  git branch GitNewBranch
+Explanation: Creates a branch named 'GitNewBranch' based on current branch HEAD.
+
+Step 2: List Local and Remote Branches
+Command:
+  git branch -a
+Explanation: 
+  - Lists all branches. 
+  - The asterisk (*) indicates the currently active working branch.
+
+Step 3: Switch to the New Branch
+Command:
+  git checkout GitNewBranch
+  (Alternative: git switch GitNewBranch)
+Explanation: Moves your working directory pointer to 'GitNewBranch'.
+
+Step 4: Add New Files and Commit Changes
+Commands:
+  echo "Feature branch update" > feature.txt
+  git add feature.txt
+  git commit -m "Add feature.txt in GitNewBranch"
+Explanation: Stages and commits new content within the feature branch.
+
+Step 5: Verify Branch Working Status
+Command:
+  git status
+Explanation: Confirms 'nothing to commit, working tree clean' on GitNewBranch.
+
+
+PART 2: MERGING & DIFFING WITH P4MERGE
+---------------------------------------
+Step 6: Switch Back to Master
+Command:
+  git checkout master
+  (or: git checkout main)
+Explanation: Switches working directory context back to the primary branch.
+
+Step 7: CLI Difference Analysis
+Command:
+  git diff master..GitNewBranch
+Explanation: Displays terminal text diff between 'master' and 'GitNewBranch'.
+
+Step 8: Visual Difference Analysis with P4Merge
+Command:
+  git difftool master..GitNewBranch
+Explanation: 
+  Launches P4Merge tool to visually compare line-by-line file differences 
+  side-by-side.
+
+Step 9: Merge Branch into Master
+Command:
+  git merge GitNewBranch
+Explanation: Integrates changes from 'GitNewBranch' into the active 'master' branch.
+
+Step 10: Observe Graph Logs Post-Merge
+Command:
+  git log --oneline --graph --decorate
+Explanation: Displays a visual ASCII branch/commit tree showing history.
+
+Step 11: Delete Branch & Verify Status
+Commands:
+  git branch -d GitNewBranch
+  git status
+Explanation: 
+  - 'git branch -d' safely deletes the local feature branch post-merge.
+  - 'git status' confirms working tree cleanliness on master.
+
+==============================================================================
+                            END OF HANDS-ON LAB NOTES
+==============================================================================

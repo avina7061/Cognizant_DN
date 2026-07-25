@@ -1,0 +1,90 @@
+==============================================================================
+         GIT CLEANUP & REMOTE PUSH BACK HANDS-ON LAB NOTES
+==============================================================================
+
+[TABLE OF CONTENTS]
+1. Core Concepts: Repository Clean State & Remote Sync
+2. Step-by-Step Hands-On Implementation
+3. Verification & Results
+4. Quick Reference Command Summary
+
+------------------------------------------------------------------------------
+1. CORE CONCEPTS: REPOSITORY CLEAN STATE & REMOTE SYNC
+------------------------------------------------------------------------------
+What is a "Clean State"?
+• A Git repository is in a "clean state" when there are no uncommitted 
+  modifications, staged changes, or untracked files in the working directory.
+• Verifying a clean state ensures that no accidental or incomplete code 
+  is pushed to the central remote repository.
+
+Why Pull Before Pushing?
+• 'git pull' fetches and integrates remote updates into your local branch.
+• Pulling first prevents non-fast-forward push rejections and ensures your 
+  local environment has the latest upstream changes.
+
+------------------------------------------------------------------------------
+2. STEP-BY-STEP HANDS-ON IMPLEMENTATION
+------------------------------------------------------------------------------
+Lab Goal: Verify master clean state, list branches, pull remote updates, 
+          and push all pending changes to the remote repository.
+
+Step 1: Verify Working Directory Cleanliness
+Command:
+  git status
+Explanation:
+  Confirms that the active 'master' (or 'main') branch has no uncommitted 
+  changes or untracked files. Expected output: 
+  "nothing to commit, working tree clean"
+
+Step 2: List All Available Branches
+Command:
+  git branch -a
+Explanation:
+  Lists all local branches as well as remote tracking branches (prefixed with 
+  remotes/origin/). Verifies that temporary feature branches (e.g., GitNewBranch) 
+  were properly cleaned up/deleted.
+
+Step 3: Pull Remote Repository to Master
+Command:
+  git pull origin master
+  (or: git pull origin main)
+Explanation:
+  Fetches changes from the remote repository and merges them into your local 
+  master branch to ensure synchronization before pushing.
+
+Step 4: Push Local Commits to Remote Repository
+Command:
+  git push origin master
+  (or: git push origin main)
+Explanation:
+  Uploads all local commits accumulated from previous labs (including 
+  Git-T03-HOL_002 merges) to the remote GitLab/GitHub repository.
+
+Step 5: Verify Reflected Changes on Remote
+Commands:
+  git log --oneline -n 5
+Explanation:
+  Displays the top 5 recent commits to verify local HEAD matches the remote 
+  'origin/master' pointer. You can also log into your GitLab/GitHub web portal 
+  to view the updated commit history online.
+
+------------------------------------------------------------------------------
+3. VERIFICATION & RESULTS
+------------------------------------------------------------------------------
+• Local Branch Status  : master (working tree clean)
+• Active Branches      : Only master remains locally
+• Sync Status          : Local master and remote origin/master are in sync
+• Remote Repository    : Reflects all merged features and commits
+
+------------------------------------------------------------------------------
+4. QUICK REFERENCE COMMAND SUMMARY
+------------------------------------------------------------------------------
+• git status                : Verify working directory state
+• git branch -a             : List all local and remote branches
+• git pull origin master    : Fetch and merge remote changes into master
+• git push origin master    : Upload local master commits to remote origin
+• git log --oneline -n 5    : Display concise recent commit history
+
+==============================================================================
+                            END OF HANDS-ON LAB NOTES
+==============================================================================
