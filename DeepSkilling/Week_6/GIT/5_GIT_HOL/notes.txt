@@ -84,7 +84,3 @@ Explanation:
 • git pull origin master    : Fetch and merge remote changes into master
 • git push origin master    : Upload local master commits to remote origin
 • git log --oneline -n 5    : Display concise recent commit history
-
-==============================================================================
-                            END OF HANDS-ON LAB NOTES
-==============================================================================
